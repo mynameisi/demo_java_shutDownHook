@@ -15,7 +15,7 @@ public class AddShutdownHookSample {
 		});
 		logger.debug("注册了关闭挂钩代码");
 		
-		logger.debug("程序最后一句话");
+		logger.debug("程序能显示最后一句话");
 		System.exit(0);
 		logger.debug("这句话因为虚拟机在System.exit已经进入关闭进程，所以显示不出来");
 	}
