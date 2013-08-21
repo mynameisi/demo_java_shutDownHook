@@ -4,7 +4,9 @@ import org.slf4j.LoggerFactory;
 public class AddShutdownHookSample {
 	private static Logger logger = LoggerFactory.getLogger(AddShutdownHookSample.class);
 
-	public void attachShutDownHook() {
+
+	public static void main(String[] args) {
+		//用以下代码注册在程序结束的时候要执行的任务
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			@Override
 			public void run() {
@@ -12,11 +14,7 @@ public class AddShutdownHookSample {
 			}
 		});
 		logger.debug("注册了关闭挂钩代码");
-	}
-
-	public static void main(String[] args) {
-		AddShutdownHookSample sample = new AddShutdownHookSample();
-		sample.attachShutDownHook();
+		
 		logger.debug("程序最后一句话");
 		System.exit(0);
 		logger.debug("这句话因为虚拟机在System.exit已经进入关闭进程，所以显示不出来");
